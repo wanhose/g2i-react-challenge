@@ -3,7 +3,7 @@ import { useMemo } from "react";
 
 import useData from "./useData";
 
-const useStep = (slug: string) => {
+const useStep = (slug?: string) => {
   const { data, loading } = useData();
 
   const step = useMemo(() => {
@@ -11,10 +11,15 @@ const useStep = (slug: string) => {
       data?.results.find((result) => result.question === slug) ??
       data?.results[0];
 
-    if (item) return normalizeStep(item);
+    if (item) {
+      const index = (data?.results.indexOf(item) ?? 0) + 1;
+      const total = data?.results.length ?? 0;
+
+      return normalizeStep({ index, total, ...item });
+    }
 
     return undefined;
-  }, [data]);
+  }, [data, slug]);
 
   return {
     loading,
