@@ -12,7 +12,7 @@ const Home = () => (
     <Button
       as={Link}
       className="mt-14 w-full text-white uppercase bg-blue-500"
-      to="/step">
+      to="/step/1">
       Begin
     </Button>
   </Container>

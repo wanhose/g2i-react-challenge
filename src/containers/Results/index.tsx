@@ -6,22 +6,25 @@ import { Link, Redirect } from 'react-router-dom';
 import useConnect from './connect';
 
 const Results = () => {
-  const { loading, results } = useConnect();
+  const { answers, loading, results, score } = useConnect();
 
   if (loading && !results) return <p className="text-center">Loading...</p>;
 
-  if (!results) return <Redirect to="/" />;
+  if (!results || answers.length !== results.length) return <Redirect to="/" />;
 
   return (
     <Container className="text-lg text-center">
       <h1 className="text-xl font-bold">
         You scored
-        <br />3 / 10
+        <br />
+        {score} / {results.length}
       </h1>
-      {results.map((result) => (
+      {results.map((result, index) => (
         <Fragment key={result.question}>
-          <h2 className="mt-8 font-medium text-gray-500">{result.question}</h2>
-          {true ? (
+          <h2 className="mt-8 font-medium text-gray-500 break-words">
+            {result.question}
+          </h2>
+          {result.correctAnswer === answers[index] ? (
             <p className="mt-4 text-green-500">
               {' '}
               Correct answer!{' '}
