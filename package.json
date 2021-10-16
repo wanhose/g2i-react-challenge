@@ -7,9 +7,9 @@
     "@types/react": "^17.0.30",
     "@types/react-dom": "^17.0.9",
     "@types/react-router-dom": "^5.3.1",
-    "@types/styled-components": "^5.1.15",
     "@typescript-eslint/eslint-plugin": "^5.0.0",
     "@typescript-eslint/parser": "^5.0.0",
+    "autoprefixer": "^9",
     "eslint": "^8.0.1",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-prettier": "^8.3.0",
@@ -17,22 +17,26 @@
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.26.1",
     "eslint-plugin-react-hooks": "^4.2.0",
+    "eslint-plugin-simple-import-sort": "^7.0.0",
+    "eslint-plugin-tailwindcss": "^1.17.0",
+    "postcss": "^7",
     "prettier": "^2.4.1",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat",
     "typescript": "^4.4.4"
   },
   "dependencies": {
+    "@craco/craco": "^6.3.0",
     "formik": "^2.2.9",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-query": "^3.27.0",
     "react-router-dom": "^5.3.0",
-    "react-scripts": "4.0.3",
-    "styled-components": "^5.3.1",
-    "styled-reset": "^4.3.4"
+    "react-scripts": "4.0.3"
   },
   "scripts": {
-    "build": "react-scripts build",
-    "start": "react-scripts start"
+    "build": "craco build",
+    "lint": "eslint src/**/*.ts{,x} --fix",
+    "start": "craco start"
   },
   "browserslist": {
     "production": [

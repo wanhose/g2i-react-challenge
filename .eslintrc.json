@@ -4,7 +4,12 @@
     "es2021": true,
     "jest": true
   },
-  "extends": ["plugin:react/recommended", "airbnb", "prettier"],
+  "extends": [
+    "airbnb",
+    "prettier",
+    "plugin:react/recommended",
+    "plugin:tailwindcss/recommended"
+  ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaFeatures": {
@@ -13,10 +18,10 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "plugins": ["react", "@typescript-eslint"],
+  "plugins": ["@typescript-eslint", "import", "react", "simple-import-sort"],
   "rules": {
     "@typescript-eslint/no-use-before-define": ["error"],
-    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
+    "global-require": "off",
     "import/extensions": [
       "error",
       "always",
@@ -27,6 +32,13 @@
         "tsx": "never"
       }
     ],
+    "import/first": "error",
+    "import/newline-after-import": "error",
+    "import/no-duplicates": "error",
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
+    "import/order": "error",
+    "simple-import-sort/exports": "error",
+    "simple-import-sort/imports": "error",
     "no-use-before-define": "off",
     "react/jsx-filename-extension": [
       1,

@@ -1,6 +1,8 @@
+import "./index.css";
+
+import App from "containers/App";
 import { StrictMode } from "react";
 import ReactDOM from "react-dom";
-import App from "containers/App";
 
 ReactDOM.render(
   <StrictMode>
