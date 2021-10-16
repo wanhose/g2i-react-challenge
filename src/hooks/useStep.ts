@@ -13,9 +13,10 @@ const useStep = (slug?: string) => {
 
     if (item) {
       const index = (data?.results.indexOf(item) ?? 0) + 1;
+      const next = data?.results[index + 1].question;
       const total = data?.results.length ?? 0;
 
-      return normalizeStep({ index, total, ...item });
+      return normalizeStep({ index, next, total, ...item });
     }
 
     return undefined;
