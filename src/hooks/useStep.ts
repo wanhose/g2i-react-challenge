@@ -7,7 +7,9 @@ const useStep = (slug: string) => {
   const { data, loading } = useData();
 
   const step = useMemo(() => {
-    const item = data?.results.find((result) => result.question === slug);
+    const item =
+      data?.results.find((result) => result.question === slug) ??
+      data?.results[0];
 
     if (item) return normalizeStep(item);
 
