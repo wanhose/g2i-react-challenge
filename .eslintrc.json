@@ -18,7 +18,13 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "plugins": ["@typescript-eslint", "import", "react", "simple-import-sort"],
+  "plugins": [
+    "@typescript-eslint",
+    "import",
+    "react",
+    "simple-import-sort",
+    "tailwindcss"
+  ],
   "rules": {
     "@typescript-eslint/no-use-before-define": ["error"],
     "global-require": "off",
@@ -44,6 +50,7 @@
       1,
       { "extensions": [".js", ".jsx", ".ts", ".tsx"] }
     ],
+    "react/jsx-props-no-spreading": "off",
     "react/react-in-jsx-scope": "off"
   },
   "settings": {
