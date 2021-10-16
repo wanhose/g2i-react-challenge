@@ -28,6 +28,7 @@
   ],
   "rules": {
     "@typescript-eslint/no-use-before-define": ["error"],
+    "camelcase": "off",
     "global-require": "off",
     "import/extensions": [
       "error",
@@ -54,7 +55,8 @@
     "react/jsx-props-no-spreading": "off",
     "react/react-in-jsx-scope": "off",
     "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "error"
+    "react-hooks/exhaustive-deps": "error",
+    "react/no-danger": "off"
   },
   "settings": {
     "import/resolver": {
