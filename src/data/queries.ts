@@ -1,4 +1,4 @@
-import { apiUrl } from "./client";
+import { apiUrl } from './client';
 
 export type Data = {
   response_code: number;
@@ -14,5 +14,5 @@ export type Data = {
 
 export const queryData = async (): Promise<Data> =>
   fetch(`${apiUrl}?amount=10&difficulty=hard&type=boolean`).then((response) =>
-    response.json()
+    response.json(),
   );

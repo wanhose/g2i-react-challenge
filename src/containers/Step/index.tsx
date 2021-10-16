@@ -1,8 +1,8 @@
-import Button from "components/Button";
-import Container from "components/MaxContent";
-import { Redirect } from "react-router-dom";
+import Button from 'components/Button';
+import Container from 'components/MaxContent';
+import { Redirect } from 'react-router-dom';
 
-import useConnect from "./connect";
+import useConnect from './connect';
 
 const Step = () => {
   const { loading, step } = useConnect();
@@ -15,12 +15,11 @@ const Step = () => {
     <Container className="text-lg text-center">
       <h1 className="text-xl font-bold">{step.category}</h1>
       <div className="relative mt-14 rounded border border-black aspect-w-1 aspect-h-1">
-        <p
+        <h2
           className="absolute top-1/2 left-1/2 px-5 w-full transform -translate-x-1/2 -translate-y-1/2"
-          style={{ height: "fit-content" }}
-        >
+          style={{ height: 'fit-content' }}>
           {step.question}
-        </p>
+        </h2>
       </div>
       <p className="mt-8 text-sm">
         {step.number} of {step.total}

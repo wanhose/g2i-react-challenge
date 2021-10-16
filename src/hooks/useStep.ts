@@ -1,7 +1,7 @@
-import { normalizeStep } from "models/Step";
-import { useMemo } from "react";
+import { normalizeStep } from 'models/Step';
+import { useMemo } from 'react';
 
-import useData from "./useData";
+import useData from './useData';
 
 const useStep = (slug?: string) => {
   const { data, loading } = useData();

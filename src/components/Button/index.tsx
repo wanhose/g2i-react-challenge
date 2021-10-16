@@ -1,13 +1,13 @@
-import { ComponentPropsWithoutRef, ElementType } from "react";
+import { ComponentPropsWithoutRef, ElementType } from 'react';
 
-import { Props } from "./types";
+import { Props } from './types';
 
-const Button = <T extends ElementType = "button">({
+const Button = <T extends ElementType = 'button'>({
   as,
-  className = "",
+  className = '',
   ...props
 }: Props<T> & Omit<ComponentPropsWithoutRef<T>, keyof Props<T>>) => {
-  const Component = as || "button";
+  const Component = as || 'button';
 
   return (
     <Component
