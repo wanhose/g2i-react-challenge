@@ -1,0 +1,8 @@
+{
+  "short_name": "G2i Challenge",
+  "name": "G2i Challenge",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
