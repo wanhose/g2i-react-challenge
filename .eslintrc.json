@@ -28,6 +28,7 @@
   ],
   "rules": {
     "@typescript-eslint/no-use-before-define": ["error"],
+    "arrow-body-style": "off",
     "camelcase": "off",
     "global-require": "off",
     "import/extensions": [
@@ -45,6 +46,7 @@
     "import/no-duplicates": "error",
     "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
     "import/order": "error",
+    "import/prefer-default-export": "off",
     "simple-import-sort/exports": "error",
     "simple-import-sort/imports": "error",
     "no-use-before-define": "off",
