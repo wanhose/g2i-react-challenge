@@ -1,3 +1,4 @@
+import useResults from 'hooks/useResults';
 import useStep from 'hooks/useStep';
 import useStepActions from 'hooks/useStepActions';
 import { MouseEvent, useCallback, useEffect } from 'react';
@@ -8,6 +9,7 @@ import { Params } from './types';
 const useConnect = () => {
   const { push } = useHistory();
   const { index } = useParams<Params>();
+  const { results } = useResults();
   const { loading, step } = useStep(index);
   const { answer } = useStepActions(index);
 
@@ -22,8 +24,8 @@ const useConnect = () => {
   );
 
   useEffect(() => {
-    if (Number.isNaN(Number(index))) push('/step/1');
-  }, [index, push, step]);
+    if (Number(index) > (results?.length ?? 0)) push('/step/1');
+  }, [index, push, results, step]);
 
   return {
     handleAnswer,

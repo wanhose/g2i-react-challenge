@@ -14,7 +14,7 @@ const useStep = (stepIndex?: string) => {
       const position = index + 1;
       const total = data?.results.length ?? 0;
 
-      return normalizeStep({ position, total, ...item });
+      return normalizeStep({ index, position, total, ...item });
     }
 
     return undefined;

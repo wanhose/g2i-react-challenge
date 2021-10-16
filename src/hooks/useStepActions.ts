@@ -10,7 +10,7 @@ const useStepActions = (index?: string) => {
 
   const answer = useCallback(
     (value?: string) =>
-      setFieldValue(`answers[${step?.position}]`, value ?? 'False'),
+      setFieldValue(`answers[${step?.index}]`, value ?? 'False'),
     [setFieldValue, step],
   );
 

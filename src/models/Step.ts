@@ -4,16 +4,18 @@ import decodeHTML from 'utils/decodeHTML';
 
 type Input = Data['results'][0] & {
   index: number;
-  next?: string;
+  position: number;
   total: number;
 };
 
 export const normalizeStep = (input: Input) => ({
   category: input.category,
-  next: input.next
-    ? generatePath('/step/:slug', { slug: input.next })
-    : '/results',
-  number: input.index,
+  index: input.index,
+  next:
+    input.position < input.total
+      ? generatePath('/step/:index', { index: input.position + 1 })
+      : undefined,
+  position: input.position,
   question: decodeHTML(input.question),
   total: input.total,
 });
